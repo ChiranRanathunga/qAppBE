@@ -17,16 +17,16 @@ public class CdlaSaloonApplication {
 	public static void main(String[] args) throws IOException {
 		ClassLoader classLoader = CdlaSaloonApplication.class.getClassLoader();
 
-//		File file = new File(Objects.requireNonNull(classLoader.getResource("serviceAccountKey.json")).getFile());
-//		FileInputStream serviceAccount = new FileInputStream(file.getAbsolutePath());
-//
-//		FirebaseOptions options = new FirebaseOptions.Builder()
-//				.setCredentials(GoogleCredentials.fromStream(serviceAccount))
-//				.build();
-//
-//		if (FirebaseApp.getApps().isEmpty()) {
-//			FirebaseApp.initializeApp(options);
-//		}
+		File file = new File(Objects.requireNonNull(classLoader.getResource("sample.json")).getFile());
+		FileInputStream serviceAccount = new FileInputStream(file.getAbsolutePath());
+
+		FirebaseOptions options = new FirebaseOptions.Builder()
+				.setCredentials(GoogleCredentials.fromStream(serviceAccount))
+				.build();
+
+		if (FirebaseApp.getApps().isEmpty()) {
+			FirebaseApp.initializeApp(options);
+		}
 		SpringApplication.run(CdlaSaloonApplication.class, args);
 	}
 
