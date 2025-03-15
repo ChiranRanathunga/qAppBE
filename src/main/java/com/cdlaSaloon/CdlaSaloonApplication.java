@@ -17,7 +17,7 @@ public class CdlaSaloonApplication {
 	public static void main(String[] args) throws IOException {
 		ClassLoader classLoader = CdlaSaloonApplication.class.getClassLoader();
 
-		File file = new File(Objects.requireNonNull(classLoader.getResource("sample.json")).getFile());
+		File file = new File(Objects.requireNonNull(classLoader.getResource("serviceAccountKey.json")).getFile());
 		FileInputStream serviceAccount = new FileInputStream(file.getAbsolutePath());
 
 		FirebaseOptions options = new FirebaseOptions.Builder()
